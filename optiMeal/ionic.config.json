@@ -1,7 +1,0 @@
-{
-  "name": "optiMeal",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}

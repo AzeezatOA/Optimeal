@@ -1,2 +1,0 @@
-# Optimeal
-HACKUTA Project
