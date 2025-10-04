@@ -25,3 +25,15 @@
 #container a {
   text-decoration: none;
 }
+
+.meal-input-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.meal-input {
+  flex: 1;
+  margin-right: 8px;
+}
