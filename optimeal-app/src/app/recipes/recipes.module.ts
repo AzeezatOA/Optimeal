@@ -13,8 +13,9 @@ import { RecipesPage } from './recipes.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RecipesPageRoutingModule
+    RecipesPageRoutingModule,
+    RecipesPage
   ],
-  declarations: [RecipesPage]
+  declarations: []
 })
-export class RecipesPageModule {}
+export class RecipesPageModule { }
