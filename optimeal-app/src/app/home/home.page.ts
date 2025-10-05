@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -13,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class HomePage {
   mealInput: string = '';
   meals: string[] = [];
+  constructor(private router: Router) { }
 
   addMeal() {
     const meal = this.mealInput.trim();
@@ -28,5 +30,9 @@ export class HomePage {
       this.meals.splice(index, 1);
     }
   }
-  constructor() { }
+
+  generateRecipes() {
+    // navigate to the recipes page
+    this.router.navigate(['/recipes']);
+  }
 }

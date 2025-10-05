@@ -3,14 +3,48 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>plan</ion-title>
+    <ion-title style="text-align: center;">Plan</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">plan</ion-title>
+      <ion-title size="large" style="text-align: center;">Overall Recommendations</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- Grocery Section -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Your Smartest Shopping Trip!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <p>You're all set for your weekly grocery run based on your selected meals</p>
+        <div>Recommended Store: </div> <!-- bestStore-->
+        <div>Total Savings: </div> <!-- savings, difference between bestStore and worstStore -->
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Meals for Your Week Section -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Meals for Your Week</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <div class="label">Your total estimated cost for all ingredients:</div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div>
+    <ion-button expand="block">Save Plan</ion-button>
+  </div>
+
+  <div>
+    <ion-button expand="block">Start Over</ion-button>
+  </div>
 </ion-content>

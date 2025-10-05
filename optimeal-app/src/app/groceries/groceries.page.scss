@@ -17,6 +17,10 @@
     margin: 12px 16px;
     border-radius: 12px;
     --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    /* light green background for best-store summary */
+    background: #e9f7ec; /* very light green */
+    border: 1px solid #cdeed0;
+    color: #0b6b32;
 
     .selected-content {
         display: flex;
@@ -24,16 +28,36 @@
         gap: 8px;
 
         .label {
-            color: var(--ion-color-medium);
+            color: #000; /* make the total label black */
             font-size: 0.95rem;
         }
 
         .price {
             font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--ion-color-primary);
+            font-weight: 700;
+            color: #0b6b32; /* darker green for emphasis */
         }
     }
+    ion-card-title {
+      color: #000; /* store title black */
+      font-weight: 700;
+    }
+
+        .card-title-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: space-between;
+        }
+
+        .cheapest-badge {
+            background: #0b6b32; /* slightly darker green than the card */
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
 }
 
 /* Section header */
@@ -67,6 +91,7 @@
 
     .store-name {
         font-weight: 600;
+        color: #000; /* store name should be black */
     }
 
     .store-total {

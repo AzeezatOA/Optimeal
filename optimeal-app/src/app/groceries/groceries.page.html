@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Store Comparison</ion-title>
+    <ion-title style="text-align: center;">Store Comparison</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,12 +14,20 @@
         <h2 class="subhead">Compare Store Prices</h2>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>Based on your selected meals, here's a comparison of ingredient costs across stores:</p>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
-  <!-- Selected store summary -->
+  <!-- Best Store Summary -->
   <ion-card class="selected-store-card">
     <ion-card-header>
-      <ion-card-title>Store Name</ion-card-title>
+      <div class="card-title-row">
+        <ion-card-title>Store Name</ion-card-title> <!-- bestStore -->
+        <span class="cheapest-badge">Cheapest!</span>
+      </div>
     </ion-card-header>
     <ion-card-content>
       <div class="selected-content">
@@ -29,6 +37,7 @@
     </ion-card-content>
   </ion-card>
 
+  <!-- All Store Options Section -->
   <div class="section-header">All Store Options</div>
 
   <div class="stores-list">
@@ -63,6 +72,6 @@
   </div>
 
   <div class="bottom-actions">
-    <ion-button expand="block" (click)="viewRecommendations()">View Recommendations</ion-button>
+    <ion-button expand="block" (click)="viewRecommendations()">View All Recommendations</ion-button>
   </div>
 </ion-content>
