@@ -3,14 +3,66 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>groceries</ion-title>
+    <ion-title>Store Comparison</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">groceries</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="groceries-page">
+  <ion-grid class="page-top">
+    <ion-row>
+      <ion-col>
+        <h2 class="subhead">Compare Store Prices</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Selected store summary -->
+  <ion-card class="selected-store-card">
+    <ion-card-header>
+      <ion-card-title>Store Name</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="selected-content">
+        <div class="label">Your total estimated cost for all ingredients:</div>
+        <div class="price">{{ selectedStoreTotal | currency }}</div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="section-header">All Store Options</div>
+
+  <div class="stores-list">
+    <ion-list lines="none">
+      <ng-container *ngFor="let s of stores">
+        <ion-card class="store-card">
+          <ion-item button (click)="toggleStore(s)" lines="none" class="store-item">
+            <ion-label class="store-label">
+              <div class="store-row">
+                <div class="store-name">{{ s.name }}</div>
+                <div class="store-total">{{ s.total | currency }}</div>
+              </div>
+              <div class="breakdown-caption">Ingredient Breakdown</div>
+            </ion-label>
+            <ion-icon slot="end" [name]="s.expanded ? 'chevron-up' : 'chevron-down'"></ion-icon>
+          </ion-item>
+
+          <div *ngIf="s.expanded" class="breakdown">
+            <ion-list>
+              <ion-item *ngFor="let ing of s.breakdown">
+                <ion-label>{{ ing.name }}</ion-label>
+                <div class="ing-price">{{ ing.price | currency }}</div>
+              </ion-item>
+              <ion-item *ngIf="!s.breakdown || s.breakdown.length === 0">
+                <ion-label>No ingredients available</ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-card>
+      </ng-container>
+    </ion-list>
+  </div>
+
+  <div class="bottom-actions">
+    <ion-button expand="block" (click)="viewRecommendations()">View Recommendations</ion-button>
+  </div>
 </ion-content>
