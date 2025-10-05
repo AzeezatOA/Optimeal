@@ -1,2 +1,2 @@
 # Optimeal
-HACKUTA Project
+Project with Azeezat, Rachel and Trinh :D
